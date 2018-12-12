@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Courier New', Courier, sans-serif
+}
+
+#wrapper > h1 {
+  margin: 126px 0px 8px 0px;
+}
+
+#nav-icon {
+  width: 26px;
+  height: 19px;
+  margin: 40px 24px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: black;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon span:nth-child(2) {
+  top: 8px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon span:nth-child(3) {
+  top: 16px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -2px;
+  left: 0px;
+}
+
+#nav-icon.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+#nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 16px;
+  left: 0px;
+}
+
+.fullscreen-nav {
+  padding-top: 40px;
+  height: 100%;
+  width: 100%;
+  background: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  text-align: center;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.fullscreen-nav.open {
+  opacity: 1;
+}
+
+.main-menu {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 300px;
+  list-style: none;
+  left: 0;
+  right: 0;
+  top: 20%;
+}
+
+.nav-link {
+  padding: 20px 0px;
+  font-size: 48px;
+  border-bottom: 1px solid #95a5a6;
+  font-weight: 700;
+  -o-transition:.5s;
+   -ms-transition:.5s;
+   -moz-transition:.5s;
+   -webkit-transition:.5s;
+   transition:.5s;
+}
+
+@media screen and (max-width: 768px) {
+
+  .nav-link {
+    font-size: 32px;
+  }
+}
+
+.nav-link:hover {
+  color: #c0392b;
+}
+
+    </style>
+</head>
+<body>
+  <div id="wrapper">
+
+      <nav class="fullscreen-nav">
+
+        <ul class="main-menu">
+          <li><h1 class="nav-link">WORK</h1></li>
+          <li><h1 class="nav-link">BLOG</h1></li>
+          <li><h1 class="nav-link">ABOUT</h1></li>
+          <li><h1 class="nav-link">CONTACT</h1></li>
+        </ul>
+
+      </nav>
+
+      <div id="nav-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <h1>Fullscreen Menu Example</h1>
+
+      <p>Click nav icon in the top left corner to display fullscreen menu!</p>
+
+    </div> 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+
+	$('#nav-icon').click(function(){
+		$(this).toggleClass('open');
+    $('.fullscreen-nav').toggleClass('open');
+	});
+});
+
+</script>
+</body>
+</html>
